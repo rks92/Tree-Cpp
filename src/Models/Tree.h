@@ -9,8 +9,6 @@
 #define TREE_H_
 
 class treeNode {
-public:
-	// return is of type bool to confirm creation. A false return implies an exception is thrown
 	bool treeNode();
 	bool treeNode(Data* data);
 
@@ -26,6 +24,17 @@ public:
 	bool deleteNode (); // deletes the current node
 	bool deleteNode (int identifier); //finds and deletes the node with the certain identifier
 	int generateIdentifier();
+
+	void setLeftChild(treeNode* child){
+		mLeftChild = new treeNode();
+		mLeftChild = child;
+	}
+
+	void setRightChild(treeNode* child){
+		mRightChild = new treeNode();
+		mRightChild = child;
+	}
+
 
 private:
 	Data* data;
