@@ -8,8 +8,9 @@
 #ifndef TREE_H_
 #define TREE_H_
 
-struct treeNode {
+class treeNode {
 public:
+	// return is of type bool to confirm creation. A false return implies an exception is thrown
 	bool treeNode();
 	bool treeNode(Data* data);
 
@@ -21,20 +22,17 @@ public:
 		return mRightChild;
 	}
 
-	void setLeftChild(treeNode* child){
-		mLeftChild = new treeNode();
-		mLeftChild = child;
-	}
-
-	void setRightChild(treeNode* child){
-		mRightChild = new treeNode();
-		mRightChild = child;
-	}
+	bool insertNode (treeNode* node);
+	bool deleteNode (); // deletes the current node
+	bool deleteNode (int identifier); //finds and deletes the node with the certain identifier
+	int generateIdentifier();
 
 private:
 	Data* data;
 	treeNode* mLeftChild;
 	treeNode* mRightChild;
+
+	int mIdentifier;
 };
 
 bool treeNode::treeNode(){
