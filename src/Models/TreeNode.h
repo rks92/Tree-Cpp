@@ -18,6 +18,10 @@ public:
 	treeNode(int key, Data* data);
 	treeNode(int key, treeNode* left, treeNode* right, Data* data);
 
+	int getMKey(){
+		return mKey;
+	}
+
 private:
 	Data* mData;
 	treeNode* mLeftChild;
