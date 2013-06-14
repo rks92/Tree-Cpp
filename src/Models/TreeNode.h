@@ -12,14 +12,17 @@
 using namespace std;
 
 class treeNode {
-	bool treeNode();
-	bool treeNode(Data* data);
-	bool treeNode(treeNode* left, treeNode* right, Data* data);
+	friend int Tree::generateKey();
+public:
+	treeNode(int key);
+	treeNode(int key, Data* data);
+	treeNode(int key, treeNode* left, treeNode* right, Data* data);
 
 private:
 	Data* mData;
 	treeNode* mLeftChild;
 	treeNode* mRightChild;
+	int mKey;//Dependant on data .. could be size ... student numbers ... length of string etc ....
 
 	void initializeChildrenToNull();
 };
@@ -29,23 +32,23 @@ void treeNode::initializeChildrenToNull() {
 	this->mRightChild = nullptr;
 }
 
-bool treeNode::treeNode(){
+treeNode::treeNode(int key){
 	initializeChildrenToNull();
 	this->mData = nullptr;
-	return true;
+	this->mKey = key;
 }
 
-bool treeNode::treeNode(Data* data){
+treeNode::treeNode(int key, Data* data){
 	initializeChildrenToNull();
 	this->mData = data;
-	return true;
+	this->mKey = key;
 }
 
-bool treeNode::treeNode(treeNode* left, treeNode* right, Data* data){
+treeNode::treeNode(int key, treeNode* left, treeNode* right, Data* data){
 	this->mLeftChild = left;
 	this->mRightChild = right;
 	this->mData = data;
-	return true;
+	this->mKey = key;
 }
 
 #endif /* TREE_H_ */

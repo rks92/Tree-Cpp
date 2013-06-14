@@ -10,6 +10,8 @@
 
 class Tree{
 public:
+	Tree();
+	Tree(Data* data);
 	bool insertNode (treeNode* node);
 	bool removeNode (); // deletes the current node
 	bool removeNode (int identifier); //finds and deletes the node with the certain identifier
@@ -17,9 +19,14 @@ public:
 	static treeNode* searchNode(int key);
 	static int generateKey(); //Dependant on data
 private:
-	int mKey;//Dependant on data .. could be size ... student numbers ... lenght of string etc ....
-
+	treeNode* root;
 };
 
+Tree::Tree(){
+	root = nullptr;
+}
 
+Tree::(Data* data){
+	root = new treeNode(generateKey(), data);
+}
 #endif /* TREE_H_ */
