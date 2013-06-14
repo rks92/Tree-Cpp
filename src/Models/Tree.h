@@ -71,4 +71,8 @@ bool Tree::add(Data* data){
 bool Tree::remove(int key){
 	// TODO: Insert implementation
 }
+
+static treeNode* Tree::searchNode(int key{
+	//TODO: Insert implementation
+}
 #endif /* TREE_H_ */
