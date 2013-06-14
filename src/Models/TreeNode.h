@@ -12,7 +12,7 @@
 using namespace std;
 
 class treeNode {
-	friend int Tree::generateKey();
+	friend class Tree;
 public:
 	treeNode(int key);
 	treeNode(int key, Data* data);
