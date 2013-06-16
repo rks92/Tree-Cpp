@@ -75,4 +75,12 @@ bool Tree::remove(int key){
 static treeNode* Tree::searchNode(int key{
 	//TODO: Insert implementation
 }
+
+bool writeToFile(){
+	//TODO
+}
+
+bool readFromFile(std::string filename){
+	//TODO
+}
 #endif /* TREE_H_ */
