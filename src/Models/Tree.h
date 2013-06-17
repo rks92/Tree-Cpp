@@ -24,28 +24,28 @@ public:
 	bool writeToFile(); //To save data
 	bool readFromFile(std::string filename); //To retrieve data from file
 
-	// TODO: insert operator overloading
+	// TODO: insert operator overloading for search and addition of two trees
 private:
-	treeNode* root;
+	treeNode* mRoot;
 	static int generateKey(); //Dependant on data
 };
 
 Tree::Tree(){
-	root = nullptr;
+	mRoot = nullptr;
 }
 
 Tree::(Data* data){
-	root = new treeNode(generateKey(), data);
+	mRoot = new treeNode(generateKey(), data);
 }
 
 bool Tree::add(Data* data){
 	treeNode* node = new treeNode(generateKey(), data);
 
-	if (root == nullptr){
-		root = node;
+	if (mRoot == nullptr){
+		mRoot = node;
 		return true;
 	}
-	treeNode* iterator = root;
+	treeNode* iterator = mRoot;
 
 	while (iterator){
 		if (node->getMKey() < iterator->getMKey()){
@@ -72,8 +72,26 @@ bool Tree::remove(int key){
 	// TODO: Insert implementation
 }
 
-static treeNode* Tree::searchNode(int key{
-	//TODO: Insert implementation
+static treeNode* Tree::searchNode(int key){
+	if (mRoot == nullptr)
+		return nullptr;
+
+	treeNode* iterator = root;
+	while (iterator != nullptr && iterator->mKey != key){
+		if (iterator->mKey < key)
+			iterator = iterator->mLeftChild;
+		else
+			iterator = iterator->mRightChild;
+	}
+
+	if (iterator == nullptr)
+		return nullptr;
+
+	return iterator;
+}
+
+static Data* Tree::searchData (int key){
+	return Tree::searchNode(key)->getData();
 }
 
 bool writeToFile(){

@@ -22,6 +22,10 @@ public:
 		return mKey;
 	}
 
+	Data* getData(){
+		return mData;
+	}
+
 private:
 	Data* mData;
 	treeNode* mLeftChild;
