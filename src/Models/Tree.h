@@ -17,7 +17,6 @@ public:
 	bool add (Data* data);
 	bool remove (int key);
 
-	treeNode* searchNode(Data* data); // implementation skipped because from lack of knowledge of data type
 	static treeNode* searchNode(int key); // static because search is from auto-generated key
 	static Data* searchData (int key); // returns data in the node of the given key
 
