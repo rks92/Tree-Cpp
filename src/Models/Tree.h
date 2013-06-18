@@ -94,7 +94,7 @@ static Data* Tree::searchData (int key){
 }
 
 bool writeToFile(){
-	//TODO
+	//TODO :implementation function for strings (Data as strings)
 }
 
 bool readFromFile(std::string filename){
